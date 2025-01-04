@@ -1,0 +1,193 @@
+.main {
+    margin-top: 1vh;
+    display: flex;
+    width: 100%;
+  }
+  
+  .left {
+    z-index: 5;
+    width: 20vw;
+    background-color: #000; /* Black theme */
+    color: #fff; /* White text */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 43%;
+    overflow-y: auto;
+    border-right: 2px solid #fff; /* Right border for visual separation */
+  }
+  
+  .detail {
+    margin-bottom: 10px; /* Space between details and the list */
+  }
+  
+  .detail h2 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensure full width for hover effect */
+  }
+  
+  ul li {
+    padding: 10px 5px;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth animation */
+  }
+  
+  ul li:hover {
+    color: #ffffff; /* Red text on hover */
+    transform: translateX(5px); /* Slide effect */
+  }
+  
+  ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff; /* Red underline */
+    transition: width 0.3s ease;
+  }
+  
+  ul li:hover::after {
+    width: 100%; /* Full-width underline on hover */
+  }
+  
+  hr {
+    width: 90%;
+    border: 0;
+    border-top: 1px solid #555; /* Subtle horizontal line */
+    margin: 10px 0;
+  }
+  
+  .sidebar-account-button {
+    background-color: #111; /* Dark button */
+    color: #fff; /* White text */
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-top: auto; /* Push the button to the bottom */
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-account-button:hover {
+    background-color: #ff0000; /* Red background on hover */
+    color: #fff; /* Keep white text */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  
+  
+  /* Right Section */
+  .right {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted minimum size for cards */
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't affect grid size */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .card-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Fewer columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+  .left {
+    width: 100%;
+  }
+    .card-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Single column layout for mobile */
+    }
+    .card-list {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-list {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Single column layout for mobile */
+      gap: 10px; /* Reduce gap on small screens */
+    }
+}
+
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the card */
+    border-radius: 10px; /* Match the card's rounded corners */
+    transition: transform 0.3s ease; /* Smooth image zoom effect */
+  }
+  
+  .card h3 {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
+    color: #fff; /* Bright white text */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded label */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Glow effect for text */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  .card img:hover {
+    transform: scale(1.1); /* Zoom-in effect on image */
+  }
+  
+  .first-card {
+    grid-column: span 2; /* First card spans two columns for emphasis */
+    grid-row: span 2; /* Spans two rows for a larger appearance */
+    position: relative;
+  }
+  
+  
+  .Name{
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: auto;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  
+  

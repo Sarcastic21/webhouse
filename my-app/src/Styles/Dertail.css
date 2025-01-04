@@ -1,0 +1,218 @@
+
+  
+ 
+  
+ 
+  
+  
+  
+  
+  
+  .Creater{
+    animation: slideInRight 0.8s ease-out;
+margin-left: 12vw;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    border-radius: 10px;
+    background-color: red;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bolder;
+  }
+  .Creater:hover{
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .user-detail-page{
+    width: 100%;
+    margin-left: 1vw;
+  
+  }
+  .user-det{
+    margin-left: 3vw;
+    margin-top: 3vh;
+  }
+  .user-details {
+    display: flex;
+    animation: slideInRight 0.8s ease-out;
+
+    background-color: #000000;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+  }
+  
+  .user-details h2 {
+    animation: slideInRight 0.8s ease-out;
+
+    margin-bottom: 15px;
+    color: #343a40;
+  }
+  
+  .user-details p {
+    animation: slideInRight 0.8s ease-out;
+
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  /* User Cards Styles */
+ 
+  .user-cards2 {
+    margin-left: 1vw;
+    max-width: 800px;
+  }
+  
+  
+  
+  .cards-container {
+    margin-left: 1vw;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: start;
+    animation: slideInRight 0.8s ease-out;
+    /* Align cards to the start */
+  }
+
+
+
+
+ 
+
+
+
+
+
+
+
+  
+  .card2 {
+    height: 30vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px; /* Prevent card from expanding too much */
+    margin: auto; /* Center single cards */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-title {
+    margin: 10px;
+    font-size: 18px;
+    color: #ffffff;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the card */
+    border-radius: 10px; /* Match the card's rounded corners */
+    transition: transform 0.3s ease; 
+  }
+  
+ 
+  .card2 h3{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
+    color: #fff; /* Bright white text */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded label */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  }
+  .card2:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  .card2-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .card2-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* No Cards Message */
+  .no-cards-message {
+    text-align: center;
+    color: #6c757d;
+    font-size: 16px;
+  }
+  
+  .link-website {
+    margin-right: 2vw;
+    margin-top: 1vh;
+    border-radius: 10px;
+    background-color: white;
+    color: #000000;
+    border: 1px solid #ffffff;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bolder;
+  }
+        
+  .link-website:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .detail-item{
+      padding: 0.8rem 0.2rem;
+    }
+    .link-website{
+      margin-left: 4vw;
+    }
+    .Creater{
+      margin-left: 5vw;
+    }
+    .Creater-profile-view h2{
+      margin-bottom: 1vh;
+      width: 50vw;
+margin-left: 5vw;
+    }
+    .Creater-profile-view{
+display: block;
+    }
+.detailsof{
+  margin-left: 4vw;
+  margin-right: 1vw;
+  animation: slideInRight 0.8s ease-out;
+
+  width: 90%;
+}
+
+  }
+  @media screen and (min-width: 768px) {
+.First{
+  display: flex;
+}
+.detailsof{
+  animation: slideInRight 0.8s ease-out;
+
+  width: 50vw;
+}
+  }
