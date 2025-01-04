@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 // Configure allowed origins (replace with your frontend URL if needed)
 const allowedOrigins = [
   'http://localhost:3000', // Frontend local development URL
-  'https://your-frontend-url.com' // Replace with your live frontend URL
+  'https://webhouse7.netlify.app' // Replace with your live frontend URL
 ];
 
 const corsOptions = {
