@@ -1,7 +1,5 @@
-// routes/cards.js
-
-const express = require('express');
-const Card = require('../models/Card');  // Assuming your card model is named cardModel.js
+import express from 'express';
+import Card from '../models/Card.js';  // Assuming your card model is named Card.js
 
 const router = express.Router();
 
@@ -14,6 +12,7 @@ router.get('/cardshome', async (req, res) => {
     res.status(500).json({ error: 'Error fetching cards' });
   }
 });
+
 router.get('/categorycards', async (req, res) => {
   const category = req.query.category; // Get the category from query string
   try {
@@ -45,8 +44,5 @@ router.get('/cards/:id', async (req, res) => {
   }
 });
 
+export default router;
 
-
-
-
-module.exports = router;
