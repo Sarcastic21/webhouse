@@ -1,5 +1,4 @@
-// models/Card.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const cardSchema = new mongoose.Schema({
   name: {
@@ -22,19 +21,20 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: true, 
   },
- 
-  category:{
+  category: {
     type: String,
     required: true, // Store the email of the user who posted the card
   },
-  Github:{
+  Github: {
     type: String,
     required: true,
   },
-  creatorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Link to the creator (User)
-
+  creatorId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User' // Link to the creator (User)
+  },
 }, { timestamps: true });
 
 const Card = mongoose.model('Card', cardSchema);
 
-module.exports = Card;
+export default Card;
