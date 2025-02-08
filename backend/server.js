@@ -1,11 +1,13 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const userRoutes = require('./routes/userRoutes');
-const cardRoutes = require('./routes/cardRoutes');
-const chatRoutes = require('./routes/chatRoutes');
-require('dotenv').config();
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import userRoutes from './routes/userRoutes.js';
+import cardRoutes from './routes/cardRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
