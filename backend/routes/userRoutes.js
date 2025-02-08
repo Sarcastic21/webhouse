@@ -1,10 +1,11 @@
-const express = require('express');
-const User = require('../models/User');
-const Card = require('../models/Card');
-const bcrypt = require('bcryptjs');
+import express from 'express';
+import bcrypt from 'bcryptjs';
+import User from '../models/User.js';
+import Card from '../models/Card.js';
 
 const router = express.Router();
 
+// Verify sport for user
 router.post('/verify-sport', async (req, res) => {
   const { mobile, sport } = req.body;
   try {
@@ -42,15 +43,16 @@ router.put('/update-password', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 // Register User
 router.post('/register', async (req, res) => {
-  const { name, email, mobile, password,sport } = req.body;
+  const { name, email, mobile, password, sport } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
     if (userExists) return res.status(400).json({ message: 'User already exists' });
 
-    const user = new User({ name, email, mobile, password,sport });
+    const user = new User({ name, email, mobile, password, sport });
     await user.save();
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
@@ -88,39 +90,41 @@ router.get('/account', async (req, res) => {
   }
 });
 
+// Create a card
 router.post('/cards', async (req, res) => {
-  
-  const { name, image, details, link,category,creatorId,Github,} = req.body;
+  const { name, image, details, link, category, creatorId, Github } = req.body;
   const email = req.body.email || '';  // Assuming you pass the email from the frontend
-  
+
   if (!email) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
   try {
-    const newCard = new Card({ name, image, details, link, email,category,creatorId,Github, });
+    const newCard = new Card({ name, image, details, link, email, category, creatorId, Github });
     await newCard.save();
     res.json(newCard);  // Respond with the newly created card
   } catch (err) {
     res.status(500).json({ error: 'Error posting new card' });
   }
 });
-// Add this to your existing `userRoutes.js` file
+
+// Get all cards by email
 router.get('/cards', async (req, res) => {
   const { email } = req.query;  // Get the email from the query parameter
-  
+
   if (!email) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
   try {
-    const userCards = await Card.find({ email });  
+    const userCards = await Card.find({ email });
     res.json(userCards);
   } catch (err) {
     res.status(500).json({ error: 'Error fetching cards' });
   }
 });
 
+// Get user by userId
 router.get('/:userId', async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
@@ -134,6 +138,7 @@ router.get('/:userId', async (req, res) => {
   }
 });
 
+// Get cards for a specific user by creatorId
 router.get('/:userId/cards', async (req, res) => {
   try {
     const cards = await Card.find({ creatorId: req.params.userId }); // Filter cards by creatorId
@@ -147,4 +152,4 @@ router.get('/:userId/cards', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
